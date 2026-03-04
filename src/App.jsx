@@ -79,8 +79,6 @@ const skills = [
   { name: "Kubernetes", icon: "⚙️", level: 88, color: "#326ce5" },
   { name: "Terraform", icon: "🏗️", level: 90, color: "#7c3aed" },
   { name: "CI/CD", icon: "🔄", level: 96, color: "#00d9ff" },
-  { name: "Prometheus", icon: "📊", level: 85, color: "#e6522c" },
-  { name: "Grafana", icon: "📈", level: 87, color: "#f46800" },
   { name: "Linux", icon: "🐧", level: 94, color: "#10b981" },
   { name: "React", icon: "⚛️", level: 89, color: "#61dafb" },
   { name: "Python", icon: "🐍", level: 91, color: "#ffd43b" },
@@ -97,20 +95,7 @@ const projects = [
     color: "#00d9ff", icon: "🚀",
     github: "#", live: "#"
   },
-  {
-    title: "Infrastructure as Code Platform",
-    desc: "Modular Terraform modules for multi-region AWS infrastructure with automated state management and drift detection.",
-    tags: ["Terraform", "AWS", "S3", "CloudWatch"],
-    color: "#7c3aed", icon: "🏗️",
-    github: "#", live: "#"
-  },
-  {
-    title: "Kubernetes Monitoring Stack",
-    desc: "Full observability platform with Prometheus + Grafana dashboards, alerting, and distributed tracing via Jaeger.",
-    tags: ["Kubernetes", "Prometheus", "Grafana", "Jaeger"],
-    color: "#10b981", icon: "📊",
-    github: "#", live: "#"
-  },
+  
   {
     title: "DevOps Portfolio (This Site)",
     desc: "This portfolio — containerized with Docker, deployed via GitHub Actions CI/CD to Vercel with automated testing.",
@@ -122,9 +107,8 @@ const projects = [
 
 // ─── Experience Data ──────────────────────────────────────────────────────────
 const experience = [
-  { role: "Senior DevOps Engineer", company: "TechCorp Inc.", period: "2022 – Present", desc: "Led migration of 40+ microservices to Kubernetes. Reduced deployment time by 70%.", color: "#00d9ff" },
-  { role: "Cloud Infrastructure Engineer", company: "StartupXYZ", period: "2020 – 2022", desc: "Built AWS infrastructure from scratch with full IaC. 99.9% uptime SLA achieved.", color: "#7c3aed" },
-  { role: "Backend Developer", company: "DevAgency", period: "2018 – 2020", desc: "Developed REST APIs and introduced Docker containerization to the engineering team.", color: "#10b981" }
+  { role: "Cloud Support Intern", company: "Ovniq Technologies", period: "2026 – Present", desc: "Supporting Docker-based deployments, CI/CD workflows, and resolving cloud infrastructure issues.", color: "#00d9ff" },
+
 ];
 
 // ─── Skill Bar ────────────────────────────────────────────────────────────────
@@ -227,7 +211,7 @@ function Navbar() {
 
 // ─── Hero Section ─────────────────────────────────────────────────────────────
 function Hero() {
-  const typed = useTypewriter(["DevOps Engineer", "Cloud Architect", "CI/CD Specialist", "Infrastructure Nerd"]);
+  const typed = useTypewriter(["DevOps Enthusiast", "Cloud Learner", "CI/CD & Docker Practitioner", "Aspiring Cloud & Devops Engineer"]);
   return (
     <section id="about" style={{ minHeight: "100vh", display: "flex", alignItems: "center", position: "relative", zIndex: 1, padding: "0 clamp(20px,8vw,120px)" }}>
       <style>{`
@@ -289,7 +273,7 @@ function Hero() {
         </div>
         <div className="hero-tag">
           <p style={{ fontFamily: "'Inter',sans-serif", fontSize: "clamp(15px,2vw,18px)", color: "#94a3b8", lineHeight: 1.8, margin: "0 0 48px", maxWidth: "560px", fontWeight: 300 }}>
-            A passionate DevOps Engineer with hands-on experience in <span style={{ color: "#e2e8f0", fontWeight: 500 }}>AWS, CI/CD, Kubernetes, Docker, Terraform</span>, and monitoring tools like Prometheus and Grafana.
+            Cloud & Devops Intern with hands-on experience in <span style={{ color: "#e2e8f0", fontWeight: 500 }}>AWS, CI/CD, Github, Docker, Vercel</span>, and suppoting cloud-based deployments. Passionate about building efficient, scalable infrastructure and automating workflows. Currently seeking opportunities to contribute to innovative cloud projects and grow as a Devops/Cloud Engineer.
           </p>
         </div>
         <div className="hero-tag" style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
@@ -393,10 +377,10 @@ function Skills() {
         {/* Stats Row */}
         <div style={{ display: "flex", gap: "0", marginTop: "80px", borderRadius: "12px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.06)" }}>
           {[
-            { val: "5+", label: "Years Experience", color: "#00d9ff" },
-            { val: "50+", label: "Projects Shipped", color: "#7c3aed" },
-            { val: "99.9%", label: "Uptime SLA", color: "#10b981" },
-            { val: "10+", label: "Cloud Certifications", color: "#f59e0b" },
+            { val: "3+", label: "Months Experience", color: "#00d9ff" },
+            { val: "Docker", label: "Containerization Focus", color: "#7c3aed" },
+            { val: "3+", label: "CI-CD Pipeline Built", color: "#10b981" },
+            { val: "1", label: "Cloud Certifications", color: "#f59e0b" },
           ].map((stat, i) => (
             <div key={i} style={{
               flex: 1, padding: "36px 20px", textAlign: "center",
