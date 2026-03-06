@@ -42,10 +42,7 @@ function FloatingOrbs() {
     <div style={{ position: "fixed", inset: 0, pointerEvents: "none", zIndex: 0, overflow: "hidden" }}>
       {[...Array(6)].map((_, i) => (
         <div key={i} style={{
-          position: "absolute",
-          borderRadius: "50%",
-          filter: "blur(80px)",
-          opacity: 0.12,
+          position: "absolute", borderRadius: "50%", filter: "blur(80px)", opacity: 0.12,
           animation: `floatOrb${i % 3} ${14 + i * 3}s ease-in-out infinite`,
           width: `${200 + i * 80}px`, height: `${200 + i * 80}px`,
           background: i % 3 === 0 ? "#00d9ff" : i % 3 === 1 ? "#7c3aed" : "#10b981",
@@ -72,43 +69,71 @@ function GridOverlay() {
   );
 }
 
-// ─── Skills Data ──────────────────────────────────────────────────────────────
+// ─── Skills Data (Updated) ────────────────────────────────────────────────────
 const skills = [
-  { name: "AWS", icon: "☁️", level: 92, color: "#ff9900" },
-  { name: "Docker", icon: "🐳", level: 95, color: "#2496ed" },
-  { name: "Kubernetes", icon: "⚙️", level: 88, color: "#326ce5" },
-  { name: "Terraform", icon: "🏗️", level: 90, color: "#7c3aed" },
-  { name: "CI/CD", icon: "🔄", level: 96, color: "#00d9ff" },
-  { name: "Linux", icon: "🐧", level: 94, color: "#10b981" },
-  { name: "React", icon: "⚛️", level: 89, color: "#61dafb" },
-  { name: "Python", icon: "🐍", level: 91, color: "#ffd43b" },
-  { name: "GitHub Actions", icon: "🚀", level: 95, color: "#2088ff" },
-  { name: "Nginx", icon: "🌐", level: 86, color: "#009639" },
+  { name: "Docker & Docker Compose", icon: "🐳", level: 80, color: "#2496ed" },
+  { name: "CI/CD / GitHub Actions",  icon: "⚙️", level: 85, color: "#00d9ff" },
+  { name: "Prometheus & Grafana",    icon: "🔥", level: 75, color: "#f59e0b" },
+  { name: "Python / Flask",          icon: "🐍", level: 70, color: "#ffd43b" },
+  { name: "Linux / WSL2",            icon: "🐧", level: 75, color: "#10b981" },
+  { name: "AWS / Cloud",             icon: "☁️", level: 70, color: "#ff9900" },
+  { name: "React",                   icon: "⚛️", level: 70, color: "#61dafb" },
+  { name: "Loki & Alertmanager",     icon: "🚨", level: 65, color: "#7c3aed" },
 ];
 
-// ─── Projects Data ────────────────────────────────────────────────────────────
+// ─── Projects Data (Updated) ──────────────────────────────────────────────────
 const projects = [
   {
-    title: "Cloud-Native CI/CD Pipeline",
-    desc: "End-to-end pipeline with GitHub Actions, Docker, and auto-deploy to EKS. Zero-downtime deployments with blue-green strategy.",
-    tags: ["GitHub Actions", "Docker", "AWS EKS", "Helm"],
-    color: "#00d9ff", icon: "🚀",
-    github: "#", live: "#"
+    title: "DevOps Monitoring Platform",
+    desc: "Built a full-stack observability platform for 3 Python Flask microservices (Auth, Orders, Inventory). Instrumented with Prometheus, visualized in Grafana dashboards using the RED method, aggregated logs via Loki, and configured Alertmanager for real-time Slack alerts. Deployed with Docker Compose.",
+    tags: ["Python", "Flask", "Docker", "Prometheus", "Grafana", "Loki", "Alertmanager"],
+    color: "#00d9ff", icon: "📊",
+    github: "https://github.com/Adhilhameed/devops-monitoring", live: "#"
   },
-  
   {
-    title: "DevOps Portfolio (This Site)",
-    desc: "This portfolio — containerized with Docker, deployed via GitHub Actions CI/CD to Vercel with automated testing.",
+    title: "DevOps Portfolio Platform",
+    desc: "React-based portfolio containerized with Docker and integrated with GitHub Actions for automated CI workflows. Demonstrates modern DevOps practices including version control, automated builds, and cloud deployment to Vercel.",
     tags: ["React", "Docker", "GitHub Actions", "Vercel"],
     color: "#f59e0b", icon: "💼",
-    github: "#", live: "#"
-  }
+    github: "https://github.com/Adhilhameed/devops-project", live: "#"
+  },
 ];
 
-// ─── Experience Data ──────────────────────────────────────────────────────────
+// ─── Experience Data (Updated) ────────────────────────────────────────────────
 const experience = [
-  { role: "Cloud Support Intern", company: "Ovniq Technologies", period: "2026 – Present", desc: "Supporting Docker-based deployments, CI/CD workflows, and resolving cloud infrastructure issues.", color: "#00d9ff" },
+  {
+    role: "Cloud & DevOps Intern",
+    company: "Ovniq Technologies",
+    period: "2026 – Present",
+    desc: "Supporting Docker-based deployments, setting up CI/CD workflows with GitHub Actions, and resolving cloud infrastructure issues. Working on containerization and deployment automation.",
+    color: "#00d9ff"
+  },
+];
 
+// ─── Education Data (New) ─────────────────────────────────────────────────────
+const education = [
+  {
+    degree: "Bachelor of Technology",
+    field: "Information Technology",
+    school: "Bannari Amman Institute of Technology",
+    period: "2021 — 2025",
+    desc: "Focused on software engineering, cloud computing, and distributed systems. Graduated with First Class.",
+    grade: "CGPA: 6.9/10",
+    color: "#00d9ff",
+  },
+  {
+    degree: "Higher Secondary Education",
+    field: "Science (Physics, Chemistry, Mathematics)",
+    school: "Rose Mary Matric Higher Secondary School",
+    period: "2006 — 2021",
+    desc: "Completed schooling from LKG to Class 12. Consistently achieved academic excellence.",
+    grade: "10th: 91.6%  |  12th: 90.8%",
+    color: "#10b981",
+  },
+];
+
+const certs = [
+  { name: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services", year: "2026", icon: "☁️" },
 ];
 
 // ─── Skill Bar ────────────────────────────────────────────────────────────────
@@ -163,13 +188,12 @@ function SectionTitle({ label, title }) {
 // ─── Navbar ───────────────────────────────────────────────────────────────────
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-  const links = ["About", "Skills", "Projects", "Experience", "Contact"];
+  const links = ["About", "Skills", "Projects", "Experience", "Education", "Contact"];
   return (
     <nav style={{
       position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
@@ -180,16 +204,15 @@ function Navbar() {
       transition: "all 0.3s ease",
       display: "flex", alignItems: "center", justifyContent: "space-between", height: "70px"
     }}>
-      <div style={{ fontFamily: "'Orbitron',sans-serif", fontWeight: 800, fontSize: "20px", color: "#00d9ff", letterSpacing: "2px", cursor: "default" }}>
+      <div style={{ fontFamily: "'Orbitron',sans-serif", fontWeight: 800, fontSize: "20px", color: "#00d9ff", letterSpacing: "2px" }}>
         &lt;DevPortfolio /&gt;
       </div>
       <div style={{ display: "flex", gap: "32px", alignItems: "center" }}>
         {links.map(l => (
           <a key={l} href={`#${l.toLowerCase()}`} style={{
             fontFamily: "'JetBrains Mono',monospace", fontSize: "13px", color: "#94a3b8",
-            textDecoration: "none", letterSpacing: "1px",
-            transition: "color 0.2s", padding: "4px 0",
-            borderBottom: "1px solid transparent"
+            textDecoration: "none", letterSpacing: "1px", transition: "color 0.2s",
+            padding: "4px 0", borderBottom: "1px solid transparent"
           }}
             onMouseEnter={e => { e.target.style.color = "#00d9ff"; e.target.style.borderBottomColor = "#00d9ff"; }}
             onMouseLeave={e => { e.target.style.color = "#94a3b8"; e.target.style.borderBottomColor = "transparent"; }}
@@ -209,9 +232,9 @@ function Navbar() {
   );
 }
 
-// ─── Hero Section ─────────────────────────────────────────────────────────────
+// ─── Hero Section (Updated) ───────────────────────────────────────────────────
 function Hero() {
-  const typed = useTypewriter(["DevOps Enthusiast", "Cloud Learner", "CI/CD & Docker Practitioner", "Aspiring Cloud & Devops Engineer"]);
+  const typed = useTypewriter(["DevOps Enthusiast", "Cloud Learner", "Monitoring & Observability", "Aspiring Cloud & DevOps Engineer"]);
   return (
     <section id="about" style={{ minHeight: "100vh", display: "flex", alignItems: "center", position: "relative", zIndex: 1, padding: "0 clamp(20px,8vw,120px)" }}>
       <style>{`
@@ -221,18 +244,9 @@ function Hero() {
         body { margin: 0; }
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
         @keyframes heroReveal { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
-        @keyframes pulse-ring { 0%{transform:scale(1);opacity:0.4} 100%{transform:scale(1.6);opacity:0} }
         @keyframes spin-ring { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
         @keyframes counter-spin { from{transform:rotate(0deg)} to{transform:rotate(-360deg)} }
-        @keyframes shimmer { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
         @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
-        @keyframes glitch {
-          0%,100%{clip-path:inset(0 0 100% 0);transform:translate(0)}
-          20%{clip-path:inset(10% 0 60% 0);transform:translate(-3px,2px)}
-          40%{clip-path:inset(50% 0 30% 0);transform:translate(3px,-2px)}
-          60%{clip-path:inset(20% 0 70% 0);transform:translate(-2px,1px)}
-          80%{clip-path:inset(70% 0 10% 0);transform:translate(2px,-1px)}
-        }
         .hero-tag { animation: heroReveal 0.8s ease forwards; opacity: 0; }
         .hero-tag:nth-child(1){animation-delay:0.1s}
         .hero-tag:nth-child(2){animation-delay:0.3s}
@@ -256,24 +270,22 @@ function Hero() {
           AVAILABLE FOR WORK
         </div>
         <div className="hero-tag">
-          <h1 style={{ fontFamily: "'Orbitron',sans-serif", fontSize: "clamp(14px,2vw,18px)", fontWeight: 400, color: "#64748b", margin: "0 0 8px", letterSpacing: "2px" }}>
-            Hi, I'm
-          </h1>
+          <h1 style={{ fontFamily: "'Orbitron',sans-serif", fontSize: "clamp(14px,2vw,18px)", fontWeight: 400, color: "#64748b", margin: "0 0 8px", letterSpacing: "2px" }}>Hi, I'm</h1>
         </div>
         <div className="hero-tag">
           <h1 style={{ fontFamily: "'Orbitron',sans-serif", fontSize: "clamp(42px,7vw,80px)", fontWeight: 900, color: "#f1f5f9", margin: "0 0 4px", lineHeight: 1.05, letterSpacing: "-2px" }}>
-            ADHIL HAMEED 
+            ADHIL HAMEED
           </h1>
         </div>
         <div className="hero-tag" style={{ marginBottom: "32px", display: "flex", alignItems: "center", gap: "8px" }}>
-          <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "clamp(18px,3vw,28px)", color: "#00d9ff", fontWeight: 700 }}>
-            {typed}
-          </span>
+          <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "clamp(18px,3vw,28px)", color: "#00d9ff", fontWeight: 700 }}>{typed}</span>
           <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "clamp(18px,3vw,28px)", color: "#00d9ff", animation: "blink 1s step-end infinite" }}>|</span>
         </div>
         <div className="hero-tag">
           <p style={{ fontFamily: "'Inter',sans-serif", fontSize: "clamp(15px,2vw,18px)", color: "#94a3b8", lineHeight: 1.8, margin: "0 0 48px", maxWidth: "560px", fontWeight: 300 }}>
-            Cloud & Devops Intern with hands-on experience in <span style={{ color: "#e2e8f0", fontWeight: 500 }}>AWS, CI/CD, Github, Docker, Vercel</span>, and suppoting cloud-based deployments. Passionate about building efficient, scalable infrastructure and automating workflows. Currently seeking opportunities to contribute to innovative cloud projects and grow as a Devops/Cloud Engineer.
+            Aspiring Cloud & DevOps Engineer with hands-on experience in{" "}
+            <span style={{ color: "#e2e8f0", fontWeight: 500 }}>Docker, Prometheus, Grafana, GitHub Actions and CI/CD</span>.
+            Passionate about building observable, automated infrastructure. Currently interning at Ovniq Technologies and seeking opportunities to grow as a DevOps Engineer.
           </p>
         </div>
         <div className="hero-tag" style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
@@ -288,8 +300,7 @@ function Hero() {
             fontFamily: "'Orbitron',sans-serif", fontSize: "13px", fontWeight: 700,
             color: "#00d9ff", background: "transparent",
             border: "1px solid #00d9ff33", padding: "16px 36px", borderRadius: "4px",
-            textDecoration: "none", letterSpacing: "1px", transition: "all 0.2s",
-            display: "inline-block"
+            textDecoration: "none", letterSpacing: "1px", transition: "all 0.2s", display: "inline-block"
           }}
             onMouseEnter={e => { e.target.style.borderColor = "#00d9ff"; e.target.style.background = "rgba(0,217,255,0.08)"; }}
             onMouseLeave={e => { e.target.style.borderColor = "#00d9ff33"; e.target.style.background = "transparent"; }}
@@ -297,11 +308,11 @@ function Hero() {
         </div>
         <div className="hero-tag" style={{ display: "flex", gap: "14px", marginTop: "48px" }}>
           {[
-            { icon: "⚡", label: "GitHub", color: "#f1f5f9" },
-            { icon: "💼", label: "LinkedIn", color: "#0077b5" },
-            { icon: "✉️", label: "Email", color: "#00d9ff" },
+            { icon: "⚡", label: "GitHub", color: "#f1f5f9", href: "https://github.com/Adhilhameed" },
+            { icon: "💼", label: "LinkedIn", color: "#0077b5", href: "#" },
+            { icon: "✉️", label: "Email", color: "#00d9ff", href: "#contact" },
           ].map(s => (
-            <a key={s.label} href="#" className="social-btn" style={{
+            <a key={s.label} href={s.href} className="social-btn" style={{
               fontFamily: "'JetBrains Mono',monospace", fontSize: "12px",
               color: "#64748b", textDecoration: "none", display: "flex",
               alignItems: "center", gap: "6px", padding: "10px 16px",
@@ -310,52 +321,23 @@ function Hero() {
             }}
               onMouseEnter={e => { e.currentTarget.style.borderColor = s.color; e.currentTarget.style.color = s.color; }}
               onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.07)"; e.currentTarget.style.color = "#64748b"; }}
-            >
-              {s.icon} {s.label}
-            </a>
+            >{s.icon} {s.label}</a>
           ))}
         </div>
       </div>
 
       {/* Decorative right-side element */}
-      <div className="avatar-float" style={{
-        position: "absolute", right: "clamp(20px,8vw,120px)", top: "50%",
-        transform: "translateY(-50%)", display: "flex", alignItems: "center", justifyContent: "center"
-      }}>
+      <div className="avatar-float" style={{ position: "absolute", right: "clamp(20px,8vw,120px)", top: "50%", transform: "translateY(-50%)", display: "flex", alignItems: "center", justifyContent: "center" }}>
         <div style={{ position: "relative", width: "280px", height: "280px" }}>
-          {/* Spinning rings */}
-          <div style={{
-            position: "absolute", inset: "-30px", border: "1px dashed rgba(0,217,255,0.2)",
-            borderRadius: "50%", animation: "spin-ring 20s linear infinite"
-          }} />
-          <div style={{
-            position: "absolute", inset: "-60px", border: "1px dashed rgba(124,58,237,0.15)",
-            borderRadius: "50%", animation: "counter-spin 30s linear infinite"
-          }} />
-          {/* Center avatar */}
-          <div style={{
-            width: "280px", height: "280px", borderRadius: "50%",
-            background: "linear-gradient(135deg,#0d1b3e,#1a0a3c)",
-            border: "2px solid rgba(0,217,255,0.3)",
-            display: "flex", alignItems: "center", justifyContent: "center",
-            fontSize: "100px", boxShadow: "0 0 60px rgba(0,217,255,0.15), inset 0 0 40px rgba(124,58,237,0.1)"
-          }}>🧑‍💻</div>
-          {/* Orbiting badges */}
-          {["🐳","☁️","⚙️","🚀"].map((icon, i) => (
-            <div key={i} style={{
-              position: "absolute", width: "44px", height: "44px",
-              background: "rgba(10,15,30,0.9)", border: "1px solid rgba(0,217,255,0.3)",
-              borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: "20px", boxShadow: "0 0 15px rgba(0,217,255,0.15)",
-              top: `${50 + 55 * Math.sin(i * Math.PI / 2)}%`,
-              left: `${50 + 55 * Math.cos(i * Math.PI / 2)}%`,
-              transform: "translate(-50%,-50%)"
-            }}>{icon}</div>
+          <div style={{ position: "absolute", inset: "-30px", border: "1px dashed rgba(0,217,255,0.2)", borderRadius: "50%", animation: "spin-ring 20s linear infinite" }} />
+          <div style={{ position: "absolute", inset: "-60px", border: "1px dashed rgba(124,58,237,0.15)", borderRadius: "50%", animation: "counter-spin 30s linear infinite" }} />
+          <div style={{ width: "280px", height: "280px", borderRadius: "50%", background: "linear-gradient(135deg,#0d1b3e,#1a0a3c)", border: "2px solid rgba(0,217,255,0.3)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "100px", boxShadow: "0 0 60px rgba(0,217,255,0.15), inset 0 0 40px rgba(124,58,237,0.1)" }}>🧑‍💻</div>
+          {["🐳", "📊", "🔥", "🚀"].map((icon, i) => (
+            <div key={i} style={{ position: "absolute", width: "44px", height: "44px", background: "rgba(10,15,30,0.9)", border: "1px solid rgba(0,217,255,0.3)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "20px", boxShadow: "0 0 15px rgba(0,217,255,0.15)", top: `${50 + 55 * Math.sin(i * Math.PI / 2)}%`, left: `${50 + 55 * Math.cos(i * Math.PI / 2)}%`, transform: "translate(-50%,-50%)" }}>{icon}</div>
           ))}
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <div style={{ position: "absolute", bottom: "40px", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: "8px" }}>
         <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "11px", color: "#334155", letterSpacing: "2px" }}>SCROLL</span>
         <div style={{ width: "1px", height: "40px", background: "linear-gradient(to bottom, #334155, transparent)", animation: "float 2s ease-in-out infinite" }} />
@@ -364,7 +346,7 @@ function Hero() {
   );
 }
 
-// ─── Skills Section ───────────────────────────────────────────────────────────
+// ─── Skills Section (Updated) ─────────────────────────────────────────────────
 function Skills() {
   const [ref, inView] = useInView();
   return (
@@ -374,19 +356,14 @@ function Skills() {
         <div ref={ref} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))", gap: "12px 48px" }}>
           {skills.map((s, i) => <SkillBar key={s.name} skill={s} inView={inView} delay={i * 60} />)}
         </div>
-        {/* Stats Row */}
         <div style={{ display: "flex", gap: "0", marginTop: "80px", borderRadius: "12px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.06)" }}>
           {[
             { val: "3+", label: "Months Experience", color: "#00d9ff" },
-            { val: "Docker", label: "Containerization Focus", color: "#7c3aed" },
-            { val: "3+", label: "CI-CD Pipeline Built", color: "#10b981" },
-            { val: "1", label: "Cloud Certifications", color: "#f59e0b" },
+            { val: "2", label: "Projects Built", color: "#7c3aed" },
+            { val: "8+", label: "Containers Deployed", color: "#10b981" },
+            { val: "1", label: "Cloud Certification", color: "#f59e0b" },
           ].map((stat, i) => (
-            <div key={i} style={{
-              flex: 1, padding: "36px 20px", textAlign: "center",
-              background: i % 2 === 0 ? "rgba(255,255,255,0.02)" : "rgba(255,255,255,0.01)",
-              borderRight: i < 3 ? "1px solid rgba(255,255,255,0.06)" : "none"
-            }}>
+            <div key={i} style={{ flex: 1, padding: "36px 20px", textAlign: "center", background: i % 2 === 0 ? "rgba(255,255,255,0.02)" : "rgba(255,255,255,0.01)", borderRight: i < 3 ? "1px solid rgba(255,255,255,0.06)" : "none" }}>
               <div style={{ fontFamily: "'Orbitron',sans-serif", fontSize: "clamp(24px,4vw,40px)", fontWeight: 800, color: stat.color, marginBottom: "8px" }}>{stat.val}</div>
               <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "12px", color: "#64748b", letterSpacing: "1px" }}>{stat.label}</div>
             </div>
@@ -397,7 +374,7 @@ function Skills() {
   );
 }
 
-// ─── Projects Section ─────────────────────────────────────────────────────────
+// ─── Projects Section (Updated) ───────────────────────────────────────────────
 function Projects() {
   return (
     <Section id="projects">
@@ -405,12 +382,7 @@ function Projects() {
         <SectionTitle label="work" title="Featured Projects" />
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(320px,1fr))", gap: "24px" }}>
           {projects.map((p, i) => (
-            <div key={i} className="project-card" style={{
-              background: "rgba(255,255,255,0.02)", border: `1px solid ${p.color}22`,
-              borderRadius: "16px", padding: "32px", cursor: "pointer",
-              boxShadow: `0 0 30px ${p.color}0a`,
-              transition: "transform 0.3s ease, box-shadow 0.3s ease"
-            }}
+            <div key={i} className="project-card" style={{ background: "rgba(255,255,255,0.02)", border: `1px solid ${p.color}22`, borderRadius: "16px", padding: "32px", cursor: "pointer", boxShadow: `0 0 30px ${p.color}0a` }}
               onMouseEnter={e => { e.currentTarget.style.boxShadow = `0 0 40px ${p.color}22`; e.currentTarget.style.borderColor = `${p.color}55`; }}
               onMouseLeave={e => { e.currentTarget.style.boxShadow = `0 0 30px ${p.color}0a`; e.currentTarget.style.borderColor = `${p.color}22`; }}
             >
@@ -419,21 +391,12 @@ function Projects() {
               <p style={{ fontFamily: "'Inter',sans-serif", fontSize: "14px", color: "#64748b", lineHeight: 1.7, margin: "0 0 24px", fontWeight: 300 }}>{p.desc}</p>
               <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "24px" }}>
                 {p.tags.map(t => (
-                  <span key={t} style={{
-                    fontFamily: "'JetBrains Mono',monospace", fontSize: "11px",
-                    color: p.color, background: `${p.color}14`,
-                    padding: "4px 10px", borderRadius: "4px", letterSpacing: "0.5px"
-                  }}>{t}</span>
+                  <span key={t} style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "11px", color: p.color, background: `${p.color}14`, padding: "4px 10px", borderRadius: "4px", letterSpacing: "0.5px" }}>{t}</span>
                 ))}
               </div>
               <div style={{ display: "flex", gap: "12px" }}>
                 {[{ label: "GitHub", href: p.github }, { label: "Live Demo", href: p.live }].map(btn => (
-                  <a key={btn.label} href={btn.href} style={{
-                    fontFamily: "'JetBrains Mono',monospace", fontSize: "12px",
-                    color: p.color, textDecoration: "none", padding: "8px 16px",
-                    border: `1px solid ${p.color}44`, borderRadius: "6px",
-                    transition: "all 0.2s", display: "inline-block"
-                  }}
+                  <a key={btn.label} href={btn.href} style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "12px", color: p.color, textDecoration: "none", padding: "8px 16px", border: `1px solid ${p.color}44`, borderRadius: "6px", transition: "all 0.2s" }}
                     onMouseEnter={e => { e.target.style.background = `${p.color}18`; e.target.style.borderColor = p.color; }}
                     onMouseLeave={e => { e.target.style.background = "transparent"; e.target.style.borderColor = `${p.color}44`; }}
                   >{btn.label} →</a>
@@ -447,28 +410,58 @@ function Projects() {
   );
 }
 
-// ─── Experience Section ───────────────────────────────────────────────────────
+// ─── Experience Section (Updated) ────────────────────────────────────────────
 function Experience() {
   return (
     <Section id="experience">
       <div style={{ padding: "0 clamp(20px,8vw,120px)" }}>
         <SectionTitle label="career" title="Work Experience" />
         <div style={{ position: "relative", maxWidth: "800px", margin: "0 auto" }}>
-          {/* Timeline line */}
           <div style={{ position: "absolute", left: "0", top: "0", bottom: "0", width: "1px", background: "linear-gradient(to bottom,transparent,#00d9ff44,transparent)" }} />
           {experience.map((e, i) => (
             <div key={i} style={{ paddingLeft: "48px", marginBottom: "56px", position: "relative" }}>
-              {/* Dot */}
-              <div style={{
-                position: "absolute", left: "-8px", top: "4px",
-                width: "16px", height: "16px", borderRadius: "50%",
-                background: e.color, boxShadow: `0 0 15px ${e.color}`,
-                border: "2px solid #050a19"
-              }} />
+              <div style={{ position: "absolute", left: "-8px", top: "4px", width: "16px", height: "16px", borderRadius: "50%", background: e.color, boxShadow: `0 0 15px ${e.color}`, border: "2px solid #050a19" }} />
               <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "12px", color: e.color, letterSpacing: "1px", marginBottom: "8px" }}>{e.period}</div>
               <h3 style={{ fontFamily: "'Orbitron',sans-serif", fontSize: "18px", fontWeight: 700, color: "#f1f5f9", margin: "0 0 4px" }}>{e.role}</h3>
               <div style={{ fontFamily: "'Inter',sans-serif", fontSize: "14px", color: "#64748b", marginBottom: "12px" }}>{e.company}</div>
               <p style={{ fontFamily: "'Inter',sans-serif", fontSize: "15px", color: "#94a3b8", lineHeight: 1.7, margin: 0, fontWeight: 300 }}>{e.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+// ─── Education Section (New) ──────────────────────────────────────────────────
+function Education() {
+  return (
+    <Section id="education">
+      <div style={{ padding: "0 clamp(20px,8vw,120px)" }}>
+        <SectionTitle label="background" title="Education" />
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(320px,1fr))", gap: "24px", maxWidth: "1000px", margin: "0 auto" }}>
+          {education.map((edu, i) => (
+            <div key={i} style={{ background: "rgba(255,255,255,0.02)", border: `1px solid ${edu.color}22`, borderRadius: "16px", padding: "32px" }}>
+              <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "12px", color: edu.color, letterSpacing: "1px", marginBottom: "12px" }}>{edu.period}</div>
+              <h3 style={{ fontFamily: "'Orbitron',sans-serif", fontSize: "16px", fontWeight: 700, color: "#f1f5f9", margin: "0 0 8px" }}>{edu.degree}</h3>
+              <div style={{ fontFamily: "'Inter',sans-serif", fontSize: "14px", color: edu.color, marginBottom: "4px" }}>{edu.field}</div>
+              <div style={{ fontFamily: "'Inter',sans-serif", fontSize: "13px", color: "#64748b", marginBottom: "12px" }}>{edu.school}</div>
+              <p style={{ fontFamily: "'Inter',sans-serif", fontSize: "14px", color: "#94a3b8", lineHeight: 1.7, margin: "0 0 16px", fontWeight: 300 }}>{edu.desc}</p>
+              <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "13px", color: edu.color, background: `${edu.color}14`, padding: "8px 14px", borderRadius: "6px", display: "inline-block" }}>{edu.grade}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Certifications */}
+        <div style={{ maxWidth: "1000px", margin: "48px auto 0" }}>
+          <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "13px", color: "#00d9ff", letterSpacing: "3px", textTransform: "uppercase", marginBottom: "24px", textAlign: "center" }}>// Certifications</div>
+          {certs.map((cert, i) => (
+            <div key={i} style={{ display: "flex", alignItems: "center", gap: "16px", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(0,217,255,0.1)", borderRadius: "12px", padding: "20px 28px" }}>
+              <span style={{ fontSize: "32px" }}>{cert.icon}</span>
+              <div>
+                <div style={{ fontFamily: "'Inter',sans-serif", fontSize: "15px", color: "#f1f5f9", fontWeight: 500 }}>{cert.name}</div>
+                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "12px", color: "#64748b", marginTop: "4px" }}>{cert.issuer} · {cert.year}</div>
+              </div>
             </div>
           ))}
         </div>
@@ -492,12 +485,7 @@ function Contact() {
                 <div key={field} style={{ marginBottom: "20px" }}>
                   <label style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "12px", color: "#64748b", letterSpacing: "1px", display: "block", marginBottom: "8px", textTransform: "uppercase" }}>{field}</label>
                   <input value={form[field]} onChange={e => setForm(f => ({ ...f, [field]: e.target.value }))}
-                    style={{
-                      width: "100%", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)",
-                      borderRadius: "8px", padding: "14px 18px", color: "#e2e8f0",
-                      fontFamily: "'JetBrains Mono',monospace", fontSize: "14px", outline: "none",
-                      transition: "border-color 0.2s"
-                    }}
+                    style={{ width: "100%", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "8px", padding: "14px 18px", color: "#e2e8f0", fontFamily: "'JetBrains Mono',monospace", fontSize: "14px", outline: "none", transition: "border-color 0.2s" }}
                     onFocus={e => e.target.style.borderColor = "#00d9ff44"}
                     onBlur={e => e.target.style.borderColor = "rgba(255,255,255,0.08)"}
                   />
@@ -506,23 +494,12 @@ function Contact() {
               <div style={{ marginBottom: "28px" }}>
                 <label style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "12px", color: "#64748b", letterSpacing: "1px", display: "block", marginBottom: "8px", textTransform: "uppercase" }}>message</label>
                 <textarea value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))} rows={5}
-                  style={{
-                    width: "100%", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)",
-                    borderRadius: "8px", padding: "14px 18px", color: "#e2e8f0",
-                    fontFamily: "'JetBrains Mono',monospace", fontSize: "14px", outline: "none",
-                    resize: "vertical", transition: "border-color 0.2s"
-                  }}
+                  style={{ width: "100%", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "8px", padding: "14px 18px", color: "#e2e8f0", fontFamily: "'JetBrains Mono',monospace", fontSize: "14px", outline: "none", resize: "vertical", transition: "border-color 0.2s" }}
                   onFocus={e => e.target.style.borderColor = "#00d9ff44"}
                   onBlur={e => e.target.style.borderColor = "rgba(255,255,255,0.08)"}
                 />
               </div>
-              <button onClick={() => setSent(true)} style={{
-                width: "100%", fontFamily: "'Orbitron',sans-serif", fontSize: "13px", fontWeight: 700,
-                color: "#0a0f1e", background: "linear-gradient(135deg,#00d9ff,#7c3aed)",
-                border: "none", padding: "18px", borderRadius: "8px", cursor: "pointer",
-                letterSpacing: "2px", transition: "transform 0.2s",
-                boxShadow: "0 0 30px rgba(0,217,255,0.2)"
-              }}
+              <button onClick={() => setSent(true)} style={{ width: "100%", fontFamily: "'Orbitron',sans-serif", fontSize: "13px", fontWeight: 700, color: "#0a0f1e", background: "linear-gradient(135deg,#00d9ff,#7c3aed)", border: "none", padding: "18px", borderRadius: "8px", cursor: "pointer", letterSpacing: "2px", transition: "transform 0.2s", boxShadow: "0 0 30px rgba(0,217,255,0.2)" }}
                 onMouseEnter={e => e.target.style.transform = "scale(1.02)"}
                 onMouseLeave={e => e.target.style.transform = "scale(1)"}
               >SEND MESSAGE →</button>
@@ -563,6 +540,7 @@ export default function App() {
       <Skills />
       <Projects />
       <Experience />
+      <Education />
       <Contact />
       <Footer />
     </div>
