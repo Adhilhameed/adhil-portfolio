@@ -296,7 +296,7 @@ function Hero() {
             letterSpacing: "1px", transition: "transform 0.2s",
             boxShadow: "0 0 30px rgba(0,217,255,0.25)", display: "inline-block"
           }}>VIEW PROJECTS</a>
-          <a href="#" className="btn-primary" style={{
+          <a href="/Adhil_Hameed_Resume.pdf" download="Adhil_Hameed_Resume.pdf" className="btn-primary" style={{
             fontFamily: "'Orbitron',sans-serif", fontSize: "13px", fontWeight: 700,
             color: "#00d9ff", background: "transparent",
             border: "1px solid #00d9ff33", padding: "16px 36px", borderRadius: "4px",
