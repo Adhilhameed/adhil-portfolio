@@ -309,7 +309,7 @@ function Hero() {
         <div className="hero-tag" style={{ display: "flex", gap: "14px", marginTop: "48px" }}>
           {[
             { icon: "⚡", label: "GitHub", color: "#f1f5f9", href: "https://github.com/Adhilhameed" },
-            { icon: "💼", label: "LinkedIn", color: "#0077b5", href: "#" },
+            { icon: "💼", label: "LinkedIn", color: "#0077b5", href: "https://www.linkedin.com/in/adhil-hameed-539a92244/" },
             { icon: "✉️", label: "Email", color: "#00d9ff", href: "#contact" },
           ].map(s => (
             <a key={s.label} href={s.href} className="social-btn" style={{
