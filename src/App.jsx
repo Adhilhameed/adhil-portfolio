@@ -69,93 +69,114 @@ function GridOverlay() {
   );
 }
 
-// ─── Skills Data (Updated) ────────────────────────────────────────────────────
-const skills = [
-  { name: "Docker & Docker Compose", icon: "🐳", level: 80, color: "#2496ed" },
-  { name: "CI/CD / GitHub Actions",  icon: "⚙️", level: 85, color: "#00d9ff" },
-  { name: "Prometheus & Grafana",    icon: "🔥", level: 75, color: "#f59e0b" },
-  { name: "Python / Flask",          icon: "🐍", level: 70, color: "#ffd43b" },
-  { name: "Linux / WSL2",            icon: "🐧", level: 75, color: "#10b981" },
-  { name: "AWS / Cloud",             icon: "☁️", level: 70, color: "#ff9900" },
-  { name: "React",                   icon: "⚛️", level: 70, color: "#61dafb" },
-  { name: "Loki & Alertmanager",     icon: "🚨", level: 65, color: "#7c3aed" },
+// ─── Skills Data ────────────────────────────────────────────────────
+const skillCategories = [
+  {
+    category: "Programming",
+    skills: [
+      { name: "Python", icon: "🐍", color: "#ffd43b" },
+      { name: "PowerShell", icon: "⚙️", color: "#00d9ff" },
+      { name: "JavaScript", icon: "JS", color: "#f7df1e" },
+      { name: "SQL", icon: "💾", color: "#10b981" },
+    ]
+  },
+  {
+    category: "DevOps",
+    skills: [
+      { name: "Docker", icon: "🐳", color: "#2496ed" },
+      { name: "Docker Compose", icon: "📦", color: "#2496ed" },
+      { name: "Linux", icon: "🐧", color: "#10b981" },
+      { name: "Git", icon: "🌿", color: "#f14e32" },
+      { name: "GitHub Actions", icon: "⚡", color: "#00d9ff" },
+    ]
+  },
+  {
+    category: "Automation",
+    skills: [
+      { name: "Windows Task Scheduler", icon: "⏱️", color: "#0078d7" },
+      { name: "NSSM", icon: "🛠️", color: "#7c3aed" },
+      { name: "REST APIs", icon: "🔌", color: "#f59e0b" },
+      { name: "JSON", icon: "📄", color: "#10b981" },
+      { name: "CSV Automation", icon: "📊", color: "#10b981" },
+    ]
+  },
+  {
+    category: "HRMS",
+    skills: [
+      { name: "Frappe Framework", icon: "🛠", color: "#00d9ff" },
+      { name: "ERPNext", icon: "🏢", color: "#3498db" },
+      { name: "HRMS Customization", icon: "👥", color: "#7c3aed" },
+      { name: "Attendance Automation", icon: "✅", color: "#10b981" },
+      { name: "Payroll Automation", icon: "💰", color: "#f59e0b" },
+    ]
+  },
+  {
+    category: "Cloud",
+    skills: [
+      { name: "AWS Cloud Practitioner", icon: "☁️", color: "#ff9900" },
+      { name: "EC2", icon: "🖥️", color: "#ff9900" },
+      { name: "IAM", icon: "🔐", color: "#ff9900" },
+    ]
+  }
 ];
 
-// ─── Projects Data (Updated) ──────────────────────────────────────────────────
+// ─── Projects Data ──────────────────────────────────────────────────
 const projects = [
   {
+    title: "HRMS Attendance Automation System",
+    desc: "Built a Python & PowerShell automation system to integrate SecureEye biometric devices with Frappe HRMS API. Automated employee check-in/attendance, added multi-company support, and built a reliable recovery service using NSSM. Optimized for large datasets.",
+    tags: ["Python", "PowerShell", "Frappe HRMS API", "NSSM", "Biometric Integration"],
+    color: "#10b981", icon: "✅",
+    github: "#", live: "#"
+  },
+  {
+    title: "HRMS Payroll Automation",
+    desc: "Developed an automated payroll processing pipeline. Generates monthly payroll reports with CSV automation and PDF generation. Implemented automated email delivery of company-wise payroll reports.",
+    tags: ["Python", "CSV Automation", "PDF Gen", "Email Automation"],
+    color: "#f59e0b", icon: "💰",
+    github: "#", live: "#"
+  },
+  {
+    title: "Dockerized Frappe HRMS Environment",
+    desc: "Set up a containerized local development environment for ERPNext and Frappe HRMS. Configured Docker and Docker Compose with MariaDB, enabling seamless local development and testing.",
+    tags: ["Docker", "Docker Compose", "ERPNext", "MariaDB"],
+    color: "#2496ed", icon: "🐳",
+    github: "#", live: "#"
+  },
+  {
     title: "DevOps Monitoring Platform",
-    desc: "Built a full-stack observability platform for 3 Python Flask microservices (Auth, Orders, Inventory). Instrumented with Prometheus, visualized in Grafana dashboards using the RED method, aggregated logs via Loki, and configured Alertmanager for real-time Slack alerts. Deployed with Docker Compose.",
-    tags: ["Python", "Flask", "Docker", "Prometheus", "Grafana", "Loki", "Alertmanager"],
+    desc: "Built a full-stack observability platform for Python Flask microservices. Instrumented with Prometheus, visualized in Grafana using the RED method, aggregated logs via Loki, and configured Alertmanager.",
+    tags: ["Python", "Docker", "Prometheus", "Grafana", "Loki"],
     color: "#00d9ff", icon: "📊",
     github: "https://github.com/Adhilhameed/devops-monitoring", live: "#"
   },
-  {
-    title: "DevOps Portfolio Platform",
-    desc: "React-based portfolio containerized with Docker and integrated with GitHub Actions for automated CI workflows. Demonstrates modern DevOps practices including version control, automated builds, and cloud deployment to Vercel.",
-    tags: ["React", "Docker", "GitHub Actions", "Vercel"],
-    color: "#f59e0b", icon: "💼",
-    github: "https://github.com/Adhilhameed/devops-project", live: "#"
-  },
 ];
 
-// ─── Experience Data (Updated) ────────────────────────────────────────────────
+// ─── Experience Data ────────────────────────────────────────────────
 const experience = [
   {
-    role: "Cloud & DevOps Intern",
-    company: "Ovniq Technologies",
+    role: "DevOps Intern",
+    company: "Smackcoders Inc.",
     period: "2026 – Present",
-    desc: "Supporting Docker-based deployments, setting up CI/CD workflows with GitHub Actions, and resolving cloud infrastructure issues. Working on containerization and deployment automation.",
+    desc: "Developed automation scripts using Python and PowerShell. Integrated SecureEye biometric devices with Frappe HRMS. Automated Employee Checkin and Attendance synchronization. Customized payroll and leave workflows. Built recovery mechanisms using Windows Services (NSSM). Optimized attendance processing for large datasets. Configured Docker-based development environments. Investigated production automation and email delivery issues.",
     color: "#00d9ff"
   },
 ];
 
-// ─── Education Data (New) ─────────────────────────────────────────────────────
-const education = [
-  {
-    degree: "Bachelor of Technology",
-    field: "Information Technology",
-    school: "Bannari Amman Institute of Technology",
-    period: "2021 — 2025",
-    desc: "Focused on software engineering, cloud computing, and distributed systems. Graduated with First Class.",
-    grade: "CGPA: 6.9/10",
-    color: "#00d9ff",
-  },
-  {
-    degree: "Higher Secondary Education",
-    field: "Science (Physics, Chemistry, Mathematics)",
-    school: "Rose Mary Matric Higher Secondary School",
-    period: "2006 — 2021",
-    desc: "Completed schooling from LKG to Class 12. Consistently achieved academic excellence.",
-    grade: "10th: 91.6%  |  12th: 90.8%",
-    color: "#10b981",
-  },
+// ─── Timeline Data ───────────────────────────────────────────────────
+const timeline = [
+  { year: "Future", title: "Kubernetes, Terraform, CI/CD", color: "#f59e0b" },
+  { year: "2026", title: "Customized Frappe HRMS workflows", color: "#7c3aed" },
+  { year: "2026", title: "Built Payroll Automation Pipeline", color: "#10b981" },
+  { year: "2026", title: "Built HRMS Attendance Automation", color: "#00d9ff" },
+  { year: "2026", title: "Joined Smackcoders as DevOps Intern", color: "#2496ed" },
+  { year: "2026", title: "Earned AWS Cloud Practitioner", color: "#ff9900" },
 ];
 
 const certs = [
   { name: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services", year: "2026", icon: "☁️" },
 ];
 
-// ─── Skill Bar ────────────────────────────────────────────────────────────────
-function SkillBar({ skill, inView, delay }) {
-  return (
-    <div style={{ marginBottom: "16px" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px", fontFamily: "'JetBrains Mono', monospace", fontSize: "13px" }}>
-        <span style={{ color: "#e2e8f0" }}>{skill.icon} {skill.name}</span>
-        <span style={{ color: skill.color, fontWeight: 700 }}>{skill.level}%</span>
-      </div>
-      <div style={{ height: "6px", background: "rgba(255,255,255,0.06)", borderRadius: "3px", overflow: "hidden" }}>
-        <div style={{
-          height: "100%", borderRadius: "3px",
-          background: `linear-gradient(90deg, ${skill.color}, ${skill.color}88)`,
-          width: inView ? `${skill.level}%` : "0%",
-          transition: `width 1.2s cubic-bezier(0.4,0,0.2,1) ${delay}ms`,
-          boxShadow: `0 0 10px ${skill.color}66`
-        }} />
-      </div>
-    </div>
-  );
-}
 
 // ─── Section Wrapper ──────────────────────────────────────────────────────────
 function Section({ id, children, style = {} }) {
@@ -193,7 +214,7 @@ function Navbar() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-  const links = ["About", "Skills", "Projects", "Experience", "Education", "Contact"];
+  const links = ["About", "Skills", "Projects", "Experience", "Timeline", "Contact"];
   return (
     <nav style={{
       position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
@@ -234,7 +255,7 @@ function Navbar() {
 
 // ─── Hero Section (Updated) ───────────────────────────────────────────────────
 function Hero() {
-  const typed = useTypewriter(["DevOps Enthusiast", "Cloud Learner", "Monitoring & Observability", "Aspiring Cloud & DevOps Engineer"]);
+  const typed = useTypewriter(["DevOps Intern", "Python Automation", "Frappe HRMS", "Docker | Linux", "PowerShell | AWS"]);
   return (
     <section id="about" style={{ minHeight: "100vh", display: "flex", alignItems: "center", position: "relative", zIndex: 1, padding: "0 clamp(20px,8vw,120px)" }}>
       <style>{`
@@ -264,7 +285,7 @@ function Hero() {
         ::-webkit-scrollbar-thumb { background: #00d9ff44; border-radius: 3px; }
       `}</style>
 
-      <div style={{ maxWidth: "700px" }}>
+      <div style={{ maxWidth: "750px" }}>
         <div className="hero-tag" style={{ fontFamily: "'JetBrains Mono',monospace", color: "#00d9ff", fontSize: "14px", letterSpacing: "3px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
           <span style={{ display: "inline-block", width: "8px", height: "8px", borderRadius: "50%", background: "#10b981", boxShadow: "0 0 10px #10b981" }} />
           AVAILABLE FOR WORK
@@ -277,15 +298,13 @@ function Hero() {
             ADHIL HAMEED
           </h1>
         </div>
-        <div className="hero-tag" style={{ marginBottom: "32px", display: "flex", alignItems: "center", gap: "8px" }}>
-          <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "clamp(18px,3vw,28px)", color: "#00d9ff", fontWeight: 700 }}>{typed}</span>
-          <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "clamp(18px,3vw,28px)", color: "#00d9ff", animation: "blink 1s step-end infinite" }}>|</span>
+        <div className="hero-tag" style={{ marginBottom: "32px", display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
+          <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "clamp(16px,2.5vw,24px)", color: "#00d9ff", fontWeight: 700 }}>{typed}</span>
+          <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "clamp(16px,2.5vw,24px)", color: "#00d9ff", animation: "blink 1s step-end infinite" }}>|</span>
         </div>
         <div className="hero-tag">
-          <p style={{ fontFamily: "'Inter',sans-serif", fontSize: "clamp(15px,2vw,18px)", color: "#94a3b8", lineHeight: 1.8, margin: "0 0 48px", maxWidth: "560px", fontWeight: 300 }}>
-            Aspiring Cloud & DevOps Engineer with hands-on experience in{" "}
-            <span style={{ color: "#e2e8f0", fontWeight: 500 }}>Docker, Prometheus, Grafana, GitHub Actions and CI/CD</span>.
-            Passionate about building observable, automated infrastructure. Currently interning at Ovniq Technologies and seeking opportunities to grow as a DevOps Engineer.
+          <p style={{ fontFamily: "'Inter',sans-serif", fontSize: "clamp(15px,2vw,18px)", color: "#94a3b8", lineHeight: 1.8, margin: "0 0 48px", maxWidth: "650px", fontWeight: 300 }}>
+            I build automation solutions that reduce manual effort and improve operational reliability. During my internship at <span style={{ color: "#e2e8f0", fontWeight: 500 }}>Smackcoders</span>, I have been developing Python and PowerShell automation for HRMS workflows, integrating biometric attendance systems with Frappe HRMS, automating payroll processes, and building reliable recovery mechanisms for production environments.
           </p>
         </div>
         <div className="hero-tag" style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
@@ -332,7 +351,7 @@ function Hero() {
           <div style={{ position: "absolute", inset: "-30px", border: "1px dashed rgba(0,217,255,0.2)", borderRadius: "50%", animation: "spin-ring 20s linear infinite" }} />
           <div style={{ position: "absolute", inset: "-60px", border: "1px dashed rgba(124,58,237,0.15)", borderRadius: "50%", animation: "counter-spin 30s linear infinite" }} />
           <div style={{ width: "280px", height: "280px", borderRadius: "50%", background: "linear-gradient(135deg,#0d1b3e,#1a0a3c)", border: "2px solid rgba(0,217,255,0.3)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "100px", boxShadow: "0 0 60px rgba(0,217,255,0.15), inset 0 0 40px rgba(124,58,237,0.1)" }}>🧑‍💻</div>
-          {["🐳", "📊", "🔥", "🚀"].map((icon, i) => (
+          {["🐍", "🐳", "⚙️", "☁️"].map((icon, i) => (
             <div key={i} style={{ position: "absolute", width: "44px", height: "44px", background: "rgba(10,15,30,0.9)", border: "1px solid rgba(0,217,255,0.3)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "20px", boxShadow: "0 0 15px rgba(0,217,255,0.15)", top: `${50 + 55 * Math.sin(i * Math.PI / 2)}%`, left: `${50 + 55 * Math.cos(i * Math.PI / 2)}%`, transform: "translate(-50%,-50%)" }}>{icon}</div>
           ))}
         </div>
@@ -353,19 +372,31 @@ function Skills() {
     <Section id="skills">
       <div style={{ padding: "0 clamp(20px,8vw,120px)" }}>
         <SectionTitle label="expertise" title="Tech Stack" />
-        <div ref={ref} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))", gap: "12px 48px" }}>
-          {skills.map((s, i) => <SkillBar key={s.name} skill={s} inView={inView} delay={i * 60} />)}
-        </div>
-        <div style={{ display: "flex", gap: "0", marginTop: "80px", borderRadius: "12px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.06)" }}>
-          {[
-            { val: "3+", label: "Months Experience", color: "#00d9ff" },
-            { val: "2", label: "Projects Built", color: "#7c3aed" },
-            { val: "8+", label: "Containers Deployed", color: "#10b981" },
-            { val: "1", label: "Cloud Certification", color: "#f59e0b" },
-          ].map((stat, i) => (
-            <div key={i} style={{ flex: 1, padding: "36px 20px", textAlign: "center", background: i % 2 === 0 ? "rgba(255,255,255,0.02)" : "rgba(255,255,255,0.01)", borderRight: i < 3 ? "1px solid rgba(255,255,255,0.06)" : "none" }}>
-              <div style={{ fontFamily: "'Orbitron',sans-serif", fontSize: "clamp(24px,4vw,40px)", fontWeight: 800, color: stat.color, marginBottom: "8px" }}>{stat.val}</div>
-              <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "12px", color: "#64748b", letterSpacing: "1px" }}>{stat.label}</div>
+        <div ref={ref} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))", gap: "24px" }}>
+          {skillCategories.map((category, i) => (
+            <div key={category.category} style={{ 
+              background: "rgba(255,255,255,0.02)", 
+              border: "1px solid rgba(255,255,255,0.06)", 
+              borderRadius: "16px", padding: "24px",
+              opacity: inView ? 1 : 0, transform: inView ? "translateY(0)" : "translateY(20px)",
+              transition: `all 0.6s cubic-bezier(0.4,0,0.2,1) ${i * 100}ms`
+            }}>
+              <h3 style={{ fontFamily: "'Orbitron',sans-serif", fontSize: "16px", color: "#f1f5f9", marginBottom: "16px", letterSpacing: "1px" }}>{category.category}</h3>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+                {category.skills.map(skill => (
+                  <div key={skill.name} style={{
+                    display: "flex", alignItems: "center", gap: "6px",
+                    background: "rgba(255,255,255,0.03)", border: `1px solid ${skill.color}33`,
+                    padding: "8px 12px", borderRadius: "8px", fontFamily: "'JetBrains Mono',monospace",
+                    fontSize: "12px", color: "#e2e8f0", transition: "all 0.2s"
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.borderColor = skill.color; e.currentTarget.style.background = `${skill.color}11`; }}
+                  onMouseLeave={e => { e.currentTarget.style.borderColor = `${skill.color}33`; e.currentTarget.style.background = "rgba(255,255,255,0.03)"; }}
+                  >
+                    <span>{skill.icon}</span> {skill.name}
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
@@ -423,8 +454,19 @@ function Experience() {
               <div style={{ position: "absolute", left: "-8px", top: "4px", width: "16px", height: "16px", borderRadius: "50%", background: e.color, boxShadow: `0 0 15px ${e.color}`, border: "2px solid #050a19" }} />
               <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "12px", color: e.color, letterSpacing: "1px", marginBottom: "8px" }}>{e.period}</div>
               <h3 style={{ fontFamily: "'Orbitron',sans-serif", fontSize: "18px", fontWeight: 700, color: "#f1f5f9", margin: "0 0 4px" }}>{e.role}</h3>
-              <div style={{ fontFamily: "'Inter',sans-serif", fontSize: "14px", color: "#64748b", marginBottom: "12px" }}>{e.company}</div>
-              <p style={{ fontFamily: "'Inter',sans-serif", fontSize: "15px", color: "#94a3b8", lineHeight: 1.7, margin: 0, fontWeight: 300 }}>{e.desc}</p>
+              <div style={{ fontFamily: "'Inter',sans-serif", fontSize: "14px", color: "#64748b", marginBottom: "16px" }}>{e.company}</div>
+              
+              <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                {e.desc.split(". ").filter(Boolean).map((point, idx) => (
+                  <li key={idx} style={{ 
+                    fontFamily: "'Inter',sans-serif", fontSize: "14px", color: "#94a3b8", 
+                    lineHeight: 1.6, marginBottom: "8px", fontWeight: 300,
+                    display: "flex", alignItems: "flex-start", gap: "8px"
+                  }}>
+                    <span style={{ color: e.color, marginTop: "2px" }}>▹</span> {point + (point.endsWith(".") ? "" : ".")}
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
@@ -433,27 +475,52 @@ function Experience() {
   );
 }
 
-// ─── Education Section (New) ──────────────────────────────────────────────────
-function Education() {
+// ─── Timeline Section (New) ──────────────────────────────────────────────────
+function Timeline() {
   return (
-    <Section id="education">
+    <Section id="timeline">
       <div style={{ padding: "0 clamp(20px,8vw,120px)" }}>
-        <SectionTitle label="background" title="Education" />
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(320px,1fr))", gap: "24px", maxWidth: "1000px", margin: "0 auto" }}>
-          {education.map((edu, i) => (
-            <div key={i} style={{ background: "rgba(255,255,255,0.02)", border: `1px solid ${edu.color}22`, borderRadius: "16px", padding: "32px" }}>
-              <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "12px", color: edu.color, letterSpacing: "1px", marginBottom: "12px" }}>{edu.period}</div>
-              <h3 style={{ fontFamily: "'Orbitron',sans-serif", fontSize: "16px", fontWeight: 700, color: "#f1f5f9", margin: "0 0 8px" }}>{edu.degree}</h3>
-              <div style={{ fontFamily: "'Inter',sans-serif", fontSize: "14px", color: edu.color, marginBottom: "4px" }}>{edu.field}</div>
-              <div style={{ fontFamily: "'Inter',sans-serif", fontSize: "13px", color: "#64748b", marginBottom: "12px" }}>{edu.school}</div>
-              <p style={{ fontFamily: "'Inter',sans-serif", fontSize: "14px", color: "#94a3b8", lineHeight: 1.7, margin: "0 0 16px", fontWeight: 300 }}>{edu.desc}</p>
-              <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "13px", color: edu.color, background: `${edu.color}14`, padding: "8px 14px", borderRadius: "6px", display: "inline-block" }}>{edu.grade}</div>
-            </div>
-          ))}
+        <SectionTitle label="journey" title="Timeline & Milestones" />
+        
+        <div style={{ maxWidth: "800px", margin: "0 auto", position: "relative" }}>
+           <div style={{ position: "absolute", left: "50%", top: "0", bottom: "0", width: "1px", background: "rgba(255,255,255,0.06)", transform: "translateX(-50%)" }} />
+           
+           {timeline.map((item, i) => {
+             const isLeft = i % 2 !== 0;
+             return (
+               <div key={i} style={{ 
+                 display: "flex", justifyContent: "space-between", alignItems: "center",
+                 marginBottom: "32px", width: "100%", position: "relative" 
+               }}>
+                 {/* Left side */}
+                 <div style={{ width: "calc(50% - 30px)", textAlign: "right", opacity: isLeft ? 1 : 0 }}>
+                    {isLeft && (
+                      <div style={{ background: "rgba(255,255,255,0.02)", border: `1px solid ${item.color}33`, padding: "16px 24px", borderRadius: "12px", display: "inline-block" }}>
+                        <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "12px", color: item.color, marginBottom: "4px" }}>{item.year}</div>
+                        <div style={{ fontFamily: "'Inter',sans-serif", fontSize: "14px", color: "#f1f5f9" }}>{item.title}</div>
+                      </div>
+                    )}
+                 </div>
+                 
+                 {/* Center dot */}
+                 <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: item.color, position: "absolute", left: "50%", transform: "translateX(-50%)", boxShadow: `0 0 10px ${item.color}` }} />
+                 
+                 {/* Right side */}
+                 <div style={{ width: "calc(50% - 30px)", textAlign: "left", opacity: !isLeft ? 1 : 0 }}>
+                    {!isLeft && (
+                      <div style={{ background: "rgba(255,255,255,0.02)", border: `1px solid ${item.color}33`, padding: "16px 24px", borderRadius: "12px", display: "inline-block" }}>
+                        <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "12px", color: item.color, marginBottom: "4px" }}>{item.year}</div>
+                        <div style={{ fontFamily: "'Inter',sans-serif", fontSize: "14px", color: "#f1f5f9" }}>{item.title}</div>
+                      </div>
+                    )}
+                 </div>
+               </div>
+             );
+           })}
         </div>
 
         {/* Certifications */}
-        <div style={{ maxWidth: "1000px", margin: "48px auto 0" }}>
+        <div style={{ maxWidth: "800px", margin: "64px auto 0" }}>
           <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "13px", color: "#00d9ff", letterSpacing: "3px", textTransform: "uppercase", marginBottom: "24px", textAlign: "center" }}>// Certifications</div>
           {certs.map((cert, i) => (
             <div key={i} style={{ display: "flex", alignItems: "center", gap: "16px", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(0,217,255,0.1)", borderRadius: "12px", padding: "20px 28px" }}>
@@ -469,6 +536,7 @@ function Education() {
     </Section>
   );
 }
+
 
 // ─── Contact Section ──────────────────────────────────────────────────────────
 function Contact() {
@@ -540,7 +608,7 @@ export default function App() {
       <Skills />
       <Projects />
       <Experience />
-      <Education />
+      <Timeline />
       <Contact />
       <Footer />
     </div>
